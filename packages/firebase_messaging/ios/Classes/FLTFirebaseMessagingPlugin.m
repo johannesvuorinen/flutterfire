@@ -111,8 +111,8 @@ static NSObject<FlutterPluginRegistrar> *_registrar;
                                       [NSNumber numberWithBool:granted && [provisional boolValue] &&
                                                                isAtLeastVersion12],
                                 };
-                                [self->_channel invokeMethod:@"onIosSettingsRegistered"
-                                                   arguments:settingsDictionary];
+                                dispatch_async(dispatch_get_main_queue(), ^{[self->_channel invokeMethod:@"onIosSettingsRegistered"
+                                                   arguments:settingsDictionary];});
                               }];
                           result([NSNumber numberWithBool:granted]);
                         }];
