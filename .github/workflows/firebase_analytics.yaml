@@ -24,7 +24,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Install Flutter"
-        run: ./.github/workflows/scripts/install-flutter.sh stable
+        run: ./.github/workflows/scripts/install-flutter.sh dev
       - name: "Install Tools"
         run: ./.github/workflows/scripts/install-tools.sh
       - name: "Build Example"
@@ -34,7 +34,9 @@ jobs:
         with:
           api-level: 28
           arch: x86_64
-          target: google_apis
+          # Firebase Analytics works without Google Play Services, so we don't use the `googleapis`
+          # emulator target as it's considerably slower on CI.
+          target: default
           profile: Nexus 5X
           script: ./.github/workflows/scripts/drive-example.sh android
 
@@ -46,7 +48,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: "Install Flutter"
-        run: ./.github/workflows/scripts/install-flutter.sh stable
+        run: ./.github/workflows/scripts/install-flutter.sh dev
       - name: "Install Tools"
         run: ./.github/workflows/scripts/install-tools.sh
       - name: "Build Example"

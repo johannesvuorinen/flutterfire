@@ -1,3 +1,106 @@
+## 1.0.0
+
+ - Graduate package to a stable release. See pre-releases prior to this version for changelog entries.
+
+## 1.0.0-1.0.nullsafety.0
+
+ - Bump "cloud_firestore" to `1.0.0-1.0.nullsafety.0`.
+
+## 0.17.0-1.0.nullsafety.2
+
+ - **FIX**: Fix type issue. (#5081).
+ - **FIX**: Fixed crashes due to null `Settings` (#5031).
+
+## 0.17.0-1.0.nullsafety.1
+
+ - Update a dependency to the latest release.
+
+## 0.17.0-1.0.nullsafety.0
+
+> Note: This release has breaking changes.
+
+ - **BREAKING** **REFACTOR**: migrate to NNBD (#4780).
+
+## 0.16.0
+
+> Note: This release has breaking changes.
+
+ - **FIX**: add missing symlinks (fixes #4628).
+ - **FEAT**: add check on podspec to assist upgrading users deployment target.
+ - **CHORE**: add missing file license headers.
+ - **BUILD**: commit Podfiles with 10.12 deployment target.
+ - **BUILD**: remove default sdk version, version should always come from firebase_core, or be user defined.
+ - **BUILD**: set macOS deployment target to 10.12 (from 10.11).
+ - **BREAKING** **BUILD**: set osx min supported platform version to 10.12.
+
+## 0.15.0
+
+> Note: This release has breaking changes.
+
+ - **FIX**: Add missing sdk version constraints inside example pubspec.yaml (#4604).
+ - **FIX**: ensure web FieldValue types are converted (#4247).
+ - **FEAT**: Move Snapshot handling into a EventChannel (#4209).
+ - **BREAKING** **REFACTOR**: remove all currently deprecated APIs.
+ - **BREAKING** **FEAT**: forward port to firebase-ios-sdk v7.3.0.
+   - Due to this SDK upgrade, iOS 10 is now the minimum supported version by FlutterFire. Please update your build target version.
+ - **CHORE**: harmonize dependencies and version handling.
+
+## 0.14.4
+
+ - **FEAT**: bump android `com.android.tools.build` & `'com.google.gms:google-services` versions (#4269).
+ - **CHORE**: Migrate iOS example projects (#4222).
+
+## 0.14.3+1
+
+ - Update a dependency to the latest release.
+
+## 0.14.3
+
+ - **FEAT**: migrate firebase interop files to local repository (#3973).
+ - **FEAT**: add not-in & != query support (#3748).
+ - **FEAT**: bump `compileSdkVersion` to 29 in preparation for upcoming Play Store requirement.
+ - **FEAT** [WEB] `FirebaseFirestore.enablePersistence` now accepts `PersistenceSettings`
+ - **FEAT** [WEB] adds `PersistenceSettings` class
+ - **FEAT** [WEB] adds support for `FirebaseFirestore.clearPersistence`
+ - **FEAT** [WEB] adds support for `FirebaseFirestore.terminate`
+ - **FEAT** [WEB] adds support for `FirebaseFirestore.waitForPendingWrites`
+ - **FEAT** [WEB] adds support for `SetOptions.mergeFields`
+ - **FEAT** [WEB] adds `GetOptions` support for querying against server/cache
+ - **FEAT** [WEB] adds support for `Query.limitToLast`
+ - **FEAT** [WEB] adds support for `FirebaseFirestore.snapshotsInSync`
+
+## 0.14.2
+
+ - **FEAT**: bump compileSdkVersion to 29 (#3975).
+ - **FEAT**: update Firebase iOS SDK version to 6.33.0 (from 6.26.0).
+ - **CHORE**: update Firestore example app podfile.
+
+## 0.14.1+3
+
+ - **FIX**: remove unused dart:async import (#3611).
+ - **FIX**: fix returning of transaction result (#3747).
+
+## 0.14.1+2
+
+ - Update a dependency to the latest release.
+
+## 0.14.1+1
+
+ - **FIX**: remove listener if available (#3452).
+ - **DOCS**: remove `updateBlock` reference in Firestore docs (#3728).
+
+## 0.14.1
+
+ - **FIX**: local dependencies in example apps (#3319).
+ - **FIX**: pub.dev score fixes (#3318).
+ - **FIX**: add missing deprecated static methods (#3278).
+ - **FEAT**: add a [] operator to DocumentSnapshot, acting as get() (#3387).
+ - **DOCS**: Fixed docs typo (#3471).
+
+## 0.14.0+2
+
+* Added missing deprecated `Firestore` static methods.
+
 ## 0.14.0+1
 
 * Fixed issue #3210 (`Query.orderBy(FieldPath.documentId)` throws exception).
@@ -28,7 +131,7 @@ Along with the below changes, the plugin has undergone a quality of life update 
 - **BREAKING**: Getting a collection parent document via `parent()` has been changed to a getter `parent`.
 - **BREAKING**: Getting the collection `path` now always returns the `path` without leading and trailing slashes.
 - **DEPRECATED**: Calling `document()` is deprecated in favor of `doc()`.
-- **FIX**: Equality checking of `CollectionReference` now does not depend on the original path used to create the `CollectionReference`. 
+- **FIX**: Equality checking of `CollectionReference` now does not depend on the original path used to create the `CollectionReference`.
 
 **`Query`**:
 - **BREAKING**: The internal query logic has been overhauled to better assert invalid queries locally.
